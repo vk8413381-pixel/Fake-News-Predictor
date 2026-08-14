@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Fake News Detector</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>Fake News Detector</h1>
+
+            <p class="subtitle">
+                Enter a news article and check whether
+                it is predicted as real or fake.
+            </p>
+
+
+            <textarea
+                id="newsText"
+                placeholder="Paste your news article here..."
+            ></textarea>
+
+
+            <button id="checkButton">
+                Check News
+            </button>
+
+
+            <!-- Loading -->
+
+            <div id="loading" class="loading hidden">
+                Checking...
+            </div>
+
+
+            <!-- Result -->
+
+            <div id="resultBox" class="result hidden">
+
+                <h2 id="prediction"></h2>
+
+                <p>
+                    Confidence:
+                    <span id="confidence"></span>%
+                </p>
+
+            </div>
+
+
+            <!-- Error -->
+
+            <div id="errorBox" class="error hidden">
+
+                <p id="errorMessage"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}">
+    </script>
+
+</body>
+
+</html>
